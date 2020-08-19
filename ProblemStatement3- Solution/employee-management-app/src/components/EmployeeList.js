@@ -36,7 +36,7 @@ export default class EmployeeList extends Component {
             }
             return e;
         });
-        // console.log(newData[id].availability)
+        console.log(newData[id].availability)
         this.setData(newData);
     }
     
@@ -50,14 +50,11 @@ export default class EmployeeList extends Component {
                         <div class="custom-control custom-checkbox">
                             <input 
                                 type="checkbox" 
-                                class="custom-control-input"
-                                id="customCheck1" 
                                 checked={!totalEmpData.availability}
                                 onChange={() => this.handleToggleAvailability(index)}
                             > 
                             </input>
                             
-                            <label class="custom-control-label" for="customCheck1"></label>
                         </div>
                     </td>
                     <td>
