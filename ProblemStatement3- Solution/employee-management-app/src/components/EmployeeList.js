@@ -10,8 +10,8 @@ export default class EmployeeList extends Component {
 
     setData = (employeeInfo) => {
         if (employeeInfo === null) throw new Error("Array expected got null");
-        this.setState({data: employeeInfo});
         employeeInfo.sort((a,b) => (a.availability > b.availability) ? 1 : -1 );
+        this.setState({data: employeeInfo});
         localStorage.setItem("empInformation", JSON.stringify(employeeInfo));
     }
 
@@ -76,11 +76,9 @@ export default class EmployeeList extends Component {
         render() {
             
         const totalEmpData = this.getData();    
-        // console.log(data)        
         return (
             <div>
                 <div class="table-responsive mt-3 mt-md-4 mb-2">
-                    {/* <table class="table table-bordered"> */}
                         <ReactBootstrap.Table strip bordered hover>
                             <thead>
                                 <tr>
@@ -92,7 +90,6 @@ export default class EmployeeList extends Component {
                             </thead>
                             <tbody id="tbody">
                                 {totalEmpData.map(this.renderEmployee)}
-
                             </tbody>
                         </ReactBootstrap.Table> 
                 </div>

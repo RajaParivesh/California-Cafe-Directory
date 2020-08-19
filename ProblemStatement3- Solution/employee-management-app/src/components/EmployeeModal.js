@@ -5,7 +5,7 @@ class EmployeeModal extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            name: '',
+            name: this.props.name,
             gender: 'Select',
             age: '',
             designation: '',
