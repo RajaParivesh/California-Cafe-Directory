@@ -11,3 +11,10 @@ Help Joy exploring nearby cafes.https://gist.github.com/debojyoti/644ba480a22d3f
 Lets make a better tool for Joy!https://gist.github.com/debojyoti/840814eed16732bbe88a877b82573cd9
 3. **Problem Statement 3** - focused on any JavaScript framework (Angular, React OR Vue) [optional but highly recommened]
 Meet your client requirement!https://gist.github.com/debojyoti/d0c77f6169befe6a8cd064b4401260c7
+
+
+## Run Application
+1. **Clone** the project
+2. **Move i.e cd** to the project directory
+3. **Install packages** `npm install` or `yarn install`
+4. **run** `yarn start`
