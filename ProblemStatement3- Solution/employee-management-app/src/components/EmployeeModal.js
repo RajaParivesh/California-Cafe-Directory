@@ -79,8 +79,6 @@ class EmployeeModal extends React.Component{
             empInfoTable.push(this.state)      
             localStorage.setItem('empInformation', JSON.stringify(empInfoTable));
         }
-
-
     }
    
       

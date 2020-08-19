@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 
 export default class EmployeeCount extends Component {
     render() {
-        var totalEmpData = JSON.parse(localStorage.getItem('empInformation')) || [];
+        const data = localStorage.getItem('empInformation') || "[]";
+        const totalEmpData = JSON.parse(data);
+        console.log(totalEmpData);
+
         var totalEmpCount = totalEmpData.length; 
         var empdata = localStorage.getItem('empInformation');
         let count = 0;
      
-        var availableEmpCount = totalEmpData.filter(x => x.availability === true).length;
+        var availableEmpCount = totalEmpData.filter(x => x.availability === false).length;
             
         return (
         

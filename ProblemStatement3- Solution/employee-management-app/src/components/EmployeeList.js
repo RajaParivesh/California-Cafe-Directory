@@ -2,34 +2,42 @@ import React, { Component } from 'react'
 import * as ReactBootstrap from 'react-bootstrap';
 
 export default class EmployeeList extends Component {
-    
-    componentDidMount(id){
-        this.data = JSON.parse(localStorage.getItem("empInformation"));
+    state = {data: []}
+
+    getData = () => {
+        return this.state.data;
+    }
+
+    setData = (employeeInfo) => {
+        if (employeeInfo === null) throw new Error("Array expected got null");
+        localStorage.setItem("empInformation", JSON.stringify(employeeInfo));
+        this.setState({data: employeeInfo});
+    }
+
+
+    componentDidMount(){
+        const empInfo = localStorage.getItem("empInformation") || "[]";
+        this.setState({data: JSON.parse(empInfo)});
     }
     
    
     deleteEmployee = (id) => {
-        console.log("-----------delete-------");
-        // console.log(this.data);
         console.log(id);
-        const afterDeletionData = this.data.filter(row => row !== id)
-        console.log(afterDeletionData);
-        localStorage.setItem("empInformation", JSON.stringify(afterDeletionData));
-        console.log("-----------delete-------");
+        const afterDeletionData = this.state.data.filter((row, index) => index !== id)
+        this.setData(afterDeletionData);
         
     }
     handleToggleAvailability = (id) =>{
-        // const avail = JSON.parse(localStorage.getItem("empInformation"));
-        // avail[id].availability = !avail[id].availability;
-        // localStorage.setItem("empInformation", JSON.stringify(avail));
+         const empInfo = this.getData();
         
-        this.data[id].availability = !this.data[id].availability;
-        localStorage.setItem("empInformation", JSON.stringify(this.data));
-        
-        console.log("================================================");
-        console.log(this.data);
-        console.log("================================================");
-        
+        const newData = empInfo.map((e, index) =>{
+            if (index === id) {
+                e.availability = !e.availability;
+            }
+            return e;
+        });
+        // console.log(newData[id].availability)
+        this.setData(newData);
     }
     
     
@@ -69,7 +77,7 @@ export default class EmployeeList extends Component {
         
         render() {
             
-        var totalEmpData = JSON.parse(localStorage.getItem('empInformation')) || [];    
+        const totalEmpData = this.getData();    
         // console.log(data)        
         return (
             <div>
