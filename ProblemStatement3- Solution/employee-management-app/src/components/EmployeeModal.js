@@ -12,6 +12,7 @@ class EmployeeModal extends React.Component{
             department : '',
             joiningDate: '',
             availability:false,
+            errors: {}
         }
     }
    
@@ -46,17 +47,45 @@ class EmployeeModal extends React.Component{
             joiningDate : event.target.value
         })
     }
-    
+    formValidation = () => {
+        const { name,gender,age,designation,department,joiningDate,availability} = this.state;
+        let isValid = true;
+        const errors = {};
+        if(name.trim().length < 1){
+            errors.nameRequired = "All the fields are mandatory. Enter your name";
+            isValid = false;
+        }
+        if(age.trim().length < 1){
+            errors.ageRequired = "All the fields are mandatory. Enter your age";
+            isValid = false;
+        }
+        if(designation.trim().length < 1){
+            errors.designationRequired = "All the fields are mandatory. Enter your designation";
+            isValid = false;
+        }
+        if(department.trim().length < 1){
+            errors.departmentRequired = "All the fields are mandatory. Enter your department";
+            isValid = false;
+        }
+        this.setState({errors});
+        return isValid;
+    }
     handleSubmit = (event) => {
         let data = localStorage.getItem('empInformation') || "[]" ;
         let empInfoTable = JSON.parse(data);
-        empInfoTable.push(this.state)
-        localStorage.setItem('empInformation', JSON.stringify(empInfoTable));
+
+        const isValid = this.formValidation();
+        if(isValid){
+            empInfoTable.push(this.state)      
+            localStorage.setItem('empInformation', JSON.stringify(empInfoTable));
+        }
+
+
     }
    
       
     render(){
-        const {name, gender, age, designation, department,joiningDate } = this.state;
+        const {name, gender, age, designation, department,joiningDate,errors } = this.state;
         return(
             <div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeModal"
                 aria-hidden="true">
@@ -69,6 +98,16 @@ class EmployeeModal extends React.Component{
                             </button>
                         </div>
                         <div class="modal-body">
+                            <div id="form-validation"> 
+                                {Object.keys(errors).map((key)=>{
+                                    return (
+                                        <div 
+                                            key={key}>
+                                            {alert(JSON.stringify(errors[key]))}
+                                        </div>
+                                    )
+                                })}
+                            </div>
                             <form onSubmit={this.handleSubmit}>
                                 <div class="form-row ">
                                     <div class="form-group col-md-6">
@@ -98,7 +137,7 @@ class EmployeeModal extends React.Component{
                                     <div class="form-group col-md-6">
                                         <label for="" class="mb-1">Age</label>
                                         <input 
-                                            type="text"
+                                            type="number"
                                             value={age}
                                             onChange = {this.handleAgeChange}                                            
                                             class="form-control" 
@@ -144,7 +183,7 @@ class EmployeeModal extends React.Component{
                                     <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Cancel</button>
                                     <button type="submit"  class="btn btn-success btn-sm">Save</button>
                                 </div>
-
+                                
                             </form>
                         </div>
 
