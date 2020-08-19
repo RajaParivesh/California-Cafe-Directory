@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+
+<head>
+	<title>Contest | Logic Square Technologies</title>
+	<!-- favicon -->
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/x-icon" href="favicon.ico" sizes="32x32" />
+
+	<meta charset="utf-8">
+	<meta name="title" content="Experienced Mobile and Web Development Company">
+	<meta name="description"
+		content="We are Web and App Development company.We have experience in: html, wordpress,Node.js, MongoDB, Angularjs, Ionic Framework (mobile),WordPress, PHP (CodeIgniter), Python/Django Gulp, AWS">
+	<meta name="keywords"
+		content="Mobile App Development, Web Development, software developer, Website Design, iPhone, Android App Development, responsive website design">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	​
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+	<!-- font family -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
+	​
+	<style>
+		.navbar {
+			-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+			-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+			box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+		}
+
+		​ .question-dashboard {
+			display: flex;
+		}
+
+		​ .question-dashboard .table {
+			flex: 1;
+			box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em, rgba(2, 8, 20, 0.08) 0px 0.085em 0.175em;
+		}
+
+		​ .question-dashboard .table thead th,
+		.question-dashboard .table tbody td {
+			font-size: 14px;
+		}
+
+		​ .question-dashboard .card {
+			width: 240px;
+			margin-right: 15px;
+			border: 0;
+			background: #fdfdfd;
+			box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em, rgba(2, 8, 20, 0.08) 0px 0.085em 0.175em;
+		}
+
+		​ @media all and (min-width:768px) and (max-width:991px) {
+			.question-dashboard .card {
+				width: 270px;
+			}
+		}
+
+		​ @media all and (max-width: 767.98px) {
+			.question-dashboard {
+				flex-direction: column;
+			}
+		}
+	</style>
+</head>
+​
+
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+		<a class="navbar-brand" href="https://www.logic-square.com" target="_blank">
+			<img src="https://res.cloudinary.com/www-logic-square-com/image/upload/v1551945805/ls-logo.png"
+				class="ls-logo" alt="LS Logo" />
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Page Name</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- navbar -->
+	​
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<div class="question-dashboard">
+					<div class="card mt-4 mb-3 mb-md-4">
+						<div class="card-body p-3">
+							<h5 class="text-secondary mb-2">Available: <span
+									class="font-weight-bold ml-1 text-dark">08</span></h5>
+							<h5 class="text-secondary">Total: <span class="font-weight-bold ml-1 text-dark">50</span>
+							</h5>
+							​
+							<button class="btn btn-primary mt-4" data-toggle="modal" data-target="#addEmployeeModal">
+								<i class="fa fa-plus"></i>&nbsp; Add Employee</button>
+						</div>
+					</div>
+					​
+					<div class="table-responsive mt-3 mt-md-4 mb-2">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Department</th>
+									<th>Available</th>
+									<th>View Details</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>John Doe</td>
+									<td>Testing</td>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="customCheck1"
+												checked="checked">
+											<label class="custom-control-label" for="customCheck1"></label>
+										</div>
+									</td>
+									<td>
+										<button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#addEmployeeModal">
+											<i class="fa fa-edit"></i>&nbsp; Edit
+                    </button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">
+											<i class="fa fa-trash"></i>&nbsp; Delete
+										</button>
+									</td>
+								</tr>
+								<tr>
+									<td>Peter Doe</td>
+									<td>Deployment</td>
+									<td>
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="customCheck2">
+											<label class="custom-control-label" for="customCheck2"></label>
+										</div>
+									</td>
+									<td>
+										<button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#addEmployeeModal">
+											<i class="fa fa-edit"></i>&nbsp; Edit
+                    </button>
+                    <button type="button" class="btn btn-outline-danger btn-sm">
+											<i class="fa fa-trash"></i>&nbsp; Delete
+										</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div> <!-- row -->
+	</div>
+	​
+	<!-- Add Employee Modal -->
+	<div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeModal"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header pt-3 pb-2">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Add Employee</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				
+				<div class="modal-body">
+					<form>
+						<div class="form-row ">
+							<div class="form-group col-md-6">
+								<label for="" class="mb-1">Name</label>
+								<input type="text" class="form-control" id="" placeholder="Enter">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="" class="mb-1">Gender</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+									<option>Select</option>
+									<option>Male</option>
+									<option>Female</option>
+								</select>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="" class="mb-1">Age</label>
+								<input type="text" class="form-control" id="" placeholder="Enter">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="" class="mb-1">Designation</label>
+								<input type="text" class="form-control" id="" placeholder="Enter">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="" class="mb-1">Department</label>
+								<input type="text" class="form-control" id="" placeholder="Enter">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="" class="mb-1">Joining Date</label>
+								<input type="date" class="form-control" id="" placeholder="">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-success btn-sm">Save</button>
+				</div>
+			</div>
+		</div>
+	</div> <!-- modal -->
+
+	​
+	<!-- JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+		integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+		integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
