@@ -10,8 +10,9 @@ export default class EmployeeList extends Component {
 
     setData = (employeeInfo) => {
         if (employeeInfo === null) throw new Error("Array expected got null");
-        localStorage.setItem("empInformation", JSON.stringify(employeeInfo));
         this.setState({data: employeeInfo});
+        employeeInfo.sort((a,b) => (a.availability > b.availability) ? 1 : -1 );
+        localStorage.setItem("empInformation", JSON.stringify(employeeInfo));
     }
 
 
