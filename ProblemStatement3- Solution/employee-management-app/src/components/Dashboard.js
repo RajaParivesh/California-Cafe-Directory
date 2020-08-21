@@ -10,7 +10,7 @@ class Dashboard extends React.Component{
     render(){
          return(
            <div>
-               {/* <Navbar/> */}
+               <Navbar/>
                <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
